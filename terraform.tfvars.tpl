@@ -26,10 +26,10 @@ password = "#VMPASSWORD#"
 
 
 #common VM variables
-username                 = "azadmin"
-pubkeypath = "#VMPASSWORD#"
+username  = "#ADMINUSER#"
+pubkeypath = id_demo
 
-destination_ssh_key_path = $()
+destination_ssh_key_path = "/home/#ADMINUSER#/.ssh/authorized_keys"
 application_port = "80"
 
 tags = {
