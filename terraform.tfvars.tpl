@@ -27,7 +27,7 @@ password = "#VMPASSWORD#"
 
 #common VM variables
 username                 = "azadmin"
-pubkeypath =   $(var.password)
+pubkeypath = "PASSWORD"
 
 destination_ssh_key_path = $()
 application_port = "80"
