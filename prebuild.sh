@@ -1,8 +1,7 @@
 echo $PREFIX 
 echo $LOCATION
 echo $VMPASSWORD
-echo $(Build.SourceBranch)
-echo $4
+echo $ENVIRONMENT
 
 sed  "s,#PREFIX#,$PREFIX," terraform.tfvars.tpl > terraform.tfvars
 sed -i "s,#LOCATION#,$LOCATION," terraform.tfvars
