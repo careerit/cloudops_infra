@@ -1,7 +1,6 @@
 # Rename this file to terraform.tfvars afte substituting the values
 
 prefix = #PREFIX#
-
 location = "eastus"
 
 #agent Variables
