@@ -7,6 +7,9 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt-get install ansible -y
 
 
+# Install Maven
+sudo apt-get install maven -y
+
 # Install Azure CLI
 
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash  

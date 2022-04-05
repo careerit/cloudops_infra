@@ -3,7 +3,7 @@
 // #Fetch the Cloudinit (userdate) file
 
 // data "template_file" "db" {
-//   template = file("${path.module}/Templates/cloudnint-db.tpl")
+//   template = file("${path.module}/Templates/cloudinit-db.tpl")
 // }
 
 resource "azurerm_virtual_machine" "db" {

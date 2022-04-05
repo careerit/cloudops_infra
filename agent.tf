@@ -1,7 +1,7 @@
 #Fetch the Cloudinit (userdate) file
 
 data "template_file" "agent" {
-  template = file("${path.module}/Templates/cloudnint-agent.tpl")
+  template = file("${path.module}/Templates/cloudint-agent.tpl")
 }
 
 data "template_file" "key_data" {

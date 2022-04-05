@@ -16,7 +16,7 @@ resource "azurerm_network_security_rule" "agent" {
   source_port_range           = "*"
   destination_address_prefix  = "*"
   destination_port_range      = element(var.agent_inbound_ports, count.index)
-  protocol                    = "TCP"
+  protocol                    = "Tcp"
   resource_group_name         = azurerm_resource_group.myapp.name
   network_security_group_name = azurerm_network_security_group.agent.name
 }
@@ -50,7 +50,7 @@ resource "azurerm_network_security_rule" "win" {
   source_port_range           = "*"
   destination_address_prefix  = "*"
   destination_port_range      = element(var.win_inbound_ports, count.index)
-  protocol                    = "TCP"
+  protocol                    = "Tcp"
   resource_group_name         = azurerm_resource_group.myapp.name
   network_security_group_name = azurerm_network_security_group.win.name
 }
@@ -81,7 +81,7 @@ resource "azurerm_network_security_rule" "db" {
   source_port_range           = "*"
   destination_address_prefix  = "*"
   destination_port_range      = element(var.db_inbound_ports, count.index)
-  protocol                    = "TCP"
+  protocol                    = "Tcp"
   resource_group_name         = azurerm_resource_group.myapp.name
   network_security_group_name = azurerm_network_security_group.db.name
 }
@@ -113,7 +113,7 @@ resource "azurerm_network_security_rule" "web" {
   source_port_range           = "*"
   destination_address_prefix  = "*"
   destination_port_range      = element(var.web_inbound_ports, count.index)
-  protocol                    = "TCP"
+  protocol                    = "Tcp"
   resource_group_name         = azurerm_resource_group.myapp.name
   network_security_group_name = azurerm_network_security_group.web.name
 }

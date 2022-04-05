@@ -27,6 +27,9 @@ variable "application_port" {
   description  =  "Port on which App is exposed to LB"
 
 }
+variable "frontend_port" {
+  description = "Front end port for Load balancer"
+}
 
 
 variable "win_node_count" {
