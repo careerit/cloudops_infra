@@ -9,7 +9,7 @@ resource "azurerm_public_ip" "web_lb" {
 
 
 resource "azurerm_lb" "web" {
- name                = "vmss-lb"
+ name                = "${var.prefix}-web-lb"
  location            = azurerm_resource_group.myapp.location
  resource_group_name = azurerm_resource_group.myapp.name
  sku                 = "Standard"
@@ -52,4 +52,17 @@ resource "azurerm_lb_rule" "lbnatrule" {
    backend_port                   = var.application_port
    frontend_ip_configuration_name = "PublicIPAddress"
    probe_id                       = azurerm_lb_probe.web.id
+   disable_outbound_snat          = true
+}
+
+
+resource "azurerm_lb_outbound_rule" "example" {
+  loadbalancer_id         = azurerm_lb.web.id
+  name                    = "OutboundRule"
+  protocol                = "Tcp"
+  backend_address_pool_id = azurerm_lb_backend_address_pool.web.id
+
+  frontend_ip_configuration {
+    name = "PublicIPAddress"
+  }
 }
